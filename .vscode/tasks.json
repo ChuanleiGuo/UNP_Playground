@@ -4,17 +4,43 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "taskName": "echo",
+            "taskName": "daytimetcpcli",
             "type": "shell",
             "command": "clang",
             "args": [
+                "-I./lib",
                 "-g",
                 "-Wall",
                 "-Werror",
                 "-std=c99",
-                "", // filename
+                "ch1_intro/daytimetcpcli.c", // filename
                 "-o",
-                "a.out"
+                "ch1_intro/daytimetcpcli.out",
+                "./libunp.a",
+                "-lresolv",
+                "-lpthread"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "taskName": "daytimetcpsrv",
+            "type": "shell",
+            "command": "clang",
+            "args": [
+                "-I./lib",
+                "-g",
+                "-Wall",
+                "-Werror",
+                "-std=c99",
+                "ch1_intro/daytimetcpsrv.c", // filename
+                "-o",
+                "ch1_intro/daytimetcpsrv.out",
+                "./libunp.a",
+                "-lresolv",
+                "-lpthread"
             ],
             "group": {
                 "kind": "build",
