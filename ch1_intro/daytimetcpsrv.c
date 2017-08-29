@@ -16,7 +16,7 @@ int main(int argc, char **argv)
     servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
     servaddr.sin_port = htons(1026);
 
-    // 将
+    // bind: 将地址与监听连接符绑定
     Bind(listenfd, (SA *)&servaddr, sizeof(servaddr));
 
     // listen：将套接字转换为监听套接字
