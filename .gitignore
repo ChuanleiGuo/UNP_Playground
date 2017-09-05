@@ -207,4 +207,7 @@ Temporary Items
 !.vscode/extensions.json
 .history
 
+### Unnecessary files
+*.log
+
 # End of https://www.gitignore.io/api/c,macos,linux,visualstudiocode
