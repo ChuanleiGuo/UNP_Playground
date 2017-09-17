@@ -46,6 +46,28 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "taskName": "byteorder",
+            "type": "shell",
+            "command": "clang",
+            "args": [
+                "-I./lib",
+                "-g",
+                "-Wall",
+                "-Werror",
+                "-std=c99",
+                "ch1_intro/byteorder.c", // filename
+                "-o",
+                "ch1_intro/byteorder.out",
+                "./libunp.a",
+                "-lresolv",
+                "-lpthread"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
