@@ -13,9 +13,9 @@
                 "-Wall",
                 "-Werror",
                 "-std=c99",
-                "ch1_intro/daytimetcpcli.c", // filename
+                "intro/daytimetcpcli.c", // filename
                 "-o",
-                "ch1_intro/daytimetcpcli.out",
+                "intro/daytimetcpcli.out",
                 "./libunp.a",
                 "-lresolv",
                 "-lpthread"
@@ -35,9 +35,9 @@
                 "-Wall",
                 "-Werror",
                 "-std=c99",
-                "ch1_intro/daytimetcpsrv.c", // filename
+                "intro/daytimetcpsrv.c", // filename
                 "-o",
-                "ch1_intro/daytimetcpsrv.out",
+                "intro/daytimetcpsrv.out",
                 "./libunp.a",
                 "-lresolv",
                 "-lpthread"
@@ -57,9 +57,53 @@
                 "-Wall",
                 "-Werror",
                 "-std=c99",
-                "ch1_intro/byteorder.c", // filename
+                "intro/byteorder.c", // filename
                 "-o",
-                "ch1_intro/byteorder.out",
+                "intro/byteorder.out",
+                "./libunp.a",
+                "-lresolv",
+                "-lpthread"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "taskName": "tcpserv01",
+            "type": "shell",
+            "command": "clang",
+            "args": [
+                "-I./lib",
+                "-g",
+                "-Wall",
+                "-Werror",
+                "-std=c99",
+                "tcpcliserv/tcpserv01.c", // filename
+                "-o",
+                "tcpcliserv/tcpcliserv.out",
+                "./libunp.a",
+                "-lresolv",
+                "-lpthread"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "taskName": "tcpcli01",
+            "type": "shell",
+            "command": "clang",
+            "args": [
+                "-I./lib",
+                "-g",
+                "-Wall",
+                "-Werror",
+                "-std=c99",
+                "tcpcliserv/tcpcli01.c", // filename
+                "-o",
+                "tcpcliserv/tcpcli01.out",
                 "./libunp.a",
                 "-lresolv",
                 "-lpthread"
