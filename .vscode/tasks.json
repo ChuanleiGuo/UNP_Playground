@@ -114,6 +114,28 @@
             }
         },
         {
+            "taskName": "tcpcli04",
+            "type": "shell",
+            "command": "clang",
+            "args": [
+                "-I./lib",
+                "-g",
+                "-Wall",
+                "-Werror",
+                "-std=c99",
+                "tcpcliserv/tcpcli04.c", // filename
+                "-o",
+                "tcpcliserv/tcpcli04.out",
+                "./libunp.a",
+                "-lresolv",
+                "-lpthread"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "taskName": "sigchldwait.o",
             "type": "shell",
             "command": "clang",
@@ -135,6 +157,27 @@
             }
         },
         {
+            "taskName": "sigchldwaitpid.o",
+            "type": "shell",
+            "command": "clang",
+            "args": [
+                "-I./lib",
+                "-g",
+                "-D_REENTRANT",
+                "-Wall",
+                "-Werror",
+                "-std=c99",
+                "-c",
+                "tcpcliserv/sigchldwaitpid.c",
+                "-o",
+                "tcpcliserv/sigchldwaitpid.o"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "taskName": "tcpserv02",
             "type": "shell",
             "command": "clang",
@@ -149,6 +192,30 @@
                 "tcpcliserv/tcpserv02.c",
                 "-o",
                 "tcpcliserv/tcpserv02.out",
+                "./libunp.a",
+                "-lresolv",
+                "-lpthread"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "taskName": "tcpserv04",
+            "type": "shell",
+            "command": "clang",
+            "args": [
+                "-I./lib",
+                "-g",
+                "-D_REENTRANT",
+                "-Wall",
+                "-Werror",
+                "-std=c99",
+                "tcpcliserv/sigchldwaitpid.o",
+                "tcpcliserv/tcpserv04.c",
+                "-o",
+                "tcpcliserv/tcpserv04.out",
                 "./libunp.a",
                 "-lresolv",
                 "-lpthread"
