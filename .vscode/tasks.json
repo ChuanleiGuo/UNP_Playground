@@ -112,6 +112,51 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "taskName": "sigchldwait.o",
+            "type": "shell",
+            "command": "clang",
+            "args": [
+                "-I./lib",
+                "-g",
+                "-D_REENTRANT",
+                "-Wall",
+                "-Werror",
+                "-std=c99",
+                "-c",
+                "tcpcliserv/sigchldwait.c",
+                "-o",
+                "tcpcliserv/sigchldwait.o"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "taskName": "tcpserv02",
+            "type": "shell",
+            "command": "clang",
+            "args": [
+                "-I./lib",
+                "-g",
+                "-D_REENTRANT",
+                "-Wall",
+                "-Werror",
+                "-std=c99",
+                "tcpcliserv/sigchldwait.o",
+                "tcpcliserv/tcpserv02.c",
+                "-o",
+                "tcpcliserv/tcpserv02.out",
+                "./libunp.a",
+                "-lresolv",
+                "-lpthread"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
