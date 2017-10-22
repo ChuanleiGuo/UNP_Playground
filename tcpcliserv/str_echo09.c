@@ -1,0 +1,15 @@
+#include "unp.h"
+
+void str_echo(int sockfd) {
+    ssize_t n;
+    struct args args;
+    struct result result;
+    char line[MAXLINE];
+    for( ; ; ) {
+        if ((n == Readn(sockfd, &args, sizeof(args))) == 0) {
+            return;
+        }
+        result.sum = args.arg1 + args.arg2;
+        Writen(sockfd, &result, sizeof(result));
+    }
+}
